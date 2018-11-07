@@ -1,0 +1,51 @@
+CREATE TABLE Movies ( 
+    movieID     CHAR(8)         PRIMARY KEY     NOT NULL,  
+    title       VARCHAR (50)    NOT NULL,
+    year        INTEGER         NOT NULL,
+    studioID    CHAR(8)         PRIMARY KEY     NOT NULL
+);
+
+CREATE TABLE Stars (
+    starID      CHAR(8)         PRIMARY KEY     NOT NULL,
+    starName    VARCHAR (250)   NOT NULL
+);
+
+CREATE TABLE StarsIn (
+    movieID     CHAR(8)         PRIMARY KEY     NOT NULL, 
+    starID      CHAR(8)         PRIMARY KEY
+);
+
+CREATE TABLE Genres (
+    genreID     CHAR(8)         PRIMARY KEY     NOT NULL,
+    genreName   VARCHAR (50)    NOT NULL
+);
+
+CREATE TABLE ClassifyAs (
+    movieID     CHAR(8)         PRIMARY KEY     NOT NULL,     
+    genreID     CHAR(8)        PRIMARY KEY     NOT NULL
+);
+
+CREATE TABLE Customers (
+    custID      CHAR(8)         PRIMARY KEY     NOT NULL,
+    avgRating   INTEGER         NOT NULL,
+    password    VARCHAR(20)     NOT NULL
+);
+
+CREATE TABLE Rates (
+    movieID     CHAR(8)         PRIMARY KEY     NOT NULL,
+    custID      CHAR(8)         PRIMARY KEY     NOT NULL,
+    rating      INTEGER         NOT NULL,
+    comment     VARCHAR(250)    NOT NULL
+);
+
+CREATE TABLE Studios (
+    studioID    CHAR(8)         PRIMARY KEY     NOT NULL,
+    presID      CHAR(8)         PRIMARY KEY     NOT NULL,
+    studioName  VARCHAR(50)     NOT NULL
+);
+
+CREATE TABLE Presidents (
+    presID      CHAR(8)         PRIMARY KEY     NOT NULL,
+    presName    VARCHAR(250)    NOT NULL
+);
+
